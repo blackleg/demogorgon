@@ -15,11 +15,22 @@ module.exports = function (grunt) {
           'public/type.css': 'test/test_type.scss'
         }
       }
+    },
+    sassdoc: {
+      default: {
+        src: 'src',
+        options: {
+          dest: 'docs'
+        }
+      }
     }
-
   });
 
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sassdoc');
+
+  grunt.registerTask('test', ['sass']);
+  grunt.registerTask('doc', ['sassdoc']);
 
 
 };
