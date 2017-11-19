@@ -1,0 +1,16 @@
+{
+  "name": "demogorgon",
+  "version": "1.0.0",
+  "author": "hector",
+  "contributors": [],
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-sass": "^1.0.0"
+  },
+  "scripts": {
+    "lint": "grunt jshint",
+    "test": "grunt test"
+  }
+}
