@@ -1,0 +1,50 @@
+////
+/// Font-family mixins
+/// @group fonts
+////
+
+/// Font family FF Tisa
+/// @link https://typekit.com/fonts/ff-tisa-web-pro
+/// @example
+///   .font-tisa {
+///     @include ff-tisa;
+///   }
+///
+@mixin ff-tisa {
+  font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2",georgia,serif;
+}
+
+
+.font-tisa {
+  @include ff-tisa;
+}
+
+/// Font family LFT Etica
+/// @link https://typekit.com/fonts/lft-etica-web
+/// @example
+///   .font-etica {
+///     @include lft-etica;
+///   }
+///
+@mixin lft-etica {
+  font-family: "lft-etica-1","lft-etica-2",helvetica,sans-serif;
+}
+
+.font-etica {
+  @include lft-etica;
+}
+
+/// Source Sans Pro
+/// @link https://fonts.google.com/specimen/Source+Sans+Pro
+/// @example
+///   .font-source-sans-pro {
+///     @include source-sans-pro;
+///   }
+///
+@mixin source-sans-pro {
+  font-family: 'Source Sans Pro', helvetica, sans-serif;
+}
+
+.font-source-sans-pro {
+  @include source-sans-pro;
+}

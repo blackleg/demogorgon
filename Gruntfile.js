@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
@@ -12,7 +7,7 @@ module.exports = function (grunt) {
           sourcemap: 'none'
         },
         files: {
-          'public/type.css': 'test/test_type.scss'
+          'public/demogorgon.css': 'test/demogorgon.scss'
         }
       }
     },
@@ -23,14 +18,29 @@ module.exports = function (grunt) {
           dest: 'docs'
         }
       }
+    },
+    sasslint: {
+      target: ['src/\*.scss']
+    },
+    copy: {
+      dist: {
+        expand: true,
+        cwd: 'src',
+        src: '**',
+        dest: 'dist/'
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-sassdoc');
+  grunt.loadNpmTasks('grunt-sass-lint');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('test', ['sass']);
+  grunt.registerTask('lint', ['sasslint']);
+  grunt.registerTask('test', ['lint', 'sass']);
   grunt.registerTask('doc', ['sassdoc']);
 
+  grunt.registerTask('dist', ['lint', 'doc', 'copy']);
 
 };
