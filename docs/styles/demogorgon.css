@@ -45,6 +45,19 @@
   line-height: 1.0909090909em;
   font-weight: 700; }
 
+/**
+  http://css-tricks.com/snippets/css/retina-display-media-query/
+*/
+/**
+  http://css-tricks.com/snippets/css/retina-display-media-query/
+*/
+.hidden {
+  display: none; }
+
+@media (max-width: 19.9375em) {
+  .hidden-tiny-mobile {
+    display: none; } }
+
 body {
   padding: 2em; }
 

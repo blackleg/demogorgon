@@ -1,0 +1,23 @@
+@import "media-queries";
+
+/// Display none
+@mixin hidden {
+  display: none
+}
+
+/// Hide content
+.hidden {
+  @include hidden;
+}
+
+/// Display none
+@mixin hidden-tiny-mobile {
+  @include media(tiny-mobile) {
+    @include hidden;
+  }
+}
+
+/// Hidden on tiny mobile view
+.hidden-tiny-mobile {
+  @include hidden-tiny-mobile;
+}
