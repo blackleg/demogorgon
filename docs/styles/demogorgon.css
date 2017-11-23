@@ -1,30 +1,3 @@
-/*  --------------------------------------------
-  Em conversion functions
-  pixels to ems & baselines to ems
-  --------------------------------------------
-  Usage:
-  - em(6, 26) converts 6px to ems assuming the
-    font-size of the element is 26px. If the
-    element's font-size is the same as the
-    base font-size, you can omit the 2nd
-    argument: em(6)
-  - lines(0.5, 26) is a shorthand for
-    em(($line-height/2), 26), so em(12, 26)
-    in Sharetribe's case.
-  --------------------------------------------
-  Examples:
-    p {
-      font-size:
-      line-height: lines(1);
-      margin-bottom: lines(0.5);
-    }
-    h1 {
-      font-size: em(42);
-      line-height: lines(2, 42);
-      margin-bottom: lines(1, 42);
-    }
-  --------------------------------------------
-*/
 .font-tisa {
   font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2",georgia,serif; }
 
@@ -34,45 +7,46 @@
 .font-source-sans-pro {
   font-family: 'Source Sans Pro', helvetica, sans-serif; }
 
-/*  --------------------------------------------
-  Em conversion functions
-  pixels to ems & baselines to ems
-  --------------------------------------------
-  Usage:
-  - em(6, 26) converts 6px to ems assuming the
-    font-size of the element is 26px. If the
-    element's font-size is the same as the
-    base font-size, you can omit the 2nd
-    argument: em(6)
-  - lines(0.5, 26) is a shorthand for
-    em(($line-height/2), 26), so em(12, 26)
-    in Sharetribe's case.
-  --------------------------------------------
-  Examples:
-    p {
-      font-size:
-      line-height: lines(1);
-      margin-bottom: lines(0.5);
-    }
-    h1 {
-      font-size: em(42);
-      line-height: lines(2, 42);
-      margin-bottom: lines(1, 42);
-    }
-  --------------------------------------------
-*/
-.small-type {
+.type-small {
   font-size: 0.8125em;
   line-height: 1.3846153846em; }
 
-.normal-type {
+.type-normal {
   font-size: 1em;
   line-height: 1.5em; }
 
-.big-type {
+.type-big {
   font-size: 1.375em;
   line-height: 1.0909090909em;
   font-weight: 600; }
+
+.type-large {
+  font-size: 1.625em;
+  line-height: 1.3846153846em;
+  font-weight: 600; }
+
+.type-larger {
+  font-size: 2.125em;
+  line-height: 1.0588235294em;
+  font-weight: 600; }
+
+.type-huge {
+  font-size: 2.625em;
+  line-height: 1.1428571429em;
+  font-weight: 700; }
+
+.type-mega {
+  font-size: 4.25em;
+  line-height: 1.0588235294em;
+  font-weight: 700; }
+
+.type-giga {
+  font-size: 6.875em;
+  line-height: 1.0909090909em;
+  font-weight: 700; }
+
+body {
+  padding: 2em; }
 
 .styleinfo {
   color: green; }

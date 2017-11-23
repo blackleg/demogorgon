@@ -1,37 +1,38 @@
+////
+/// Conversion functions
+/// Converts pixels to ems and baselines to ems
+/// @group core
+////
+
 @import 'constants';
 
-/*  --------------------------------------------
-  Em conversion functions
-  pixels to ems & baselines to ems
-  --------------------------------------------
-  Usage:
-  - em(6, 26) converts 6px to ems assuming the
-    font-size of the element is 26px. If the
-    element's font-size is the same as the
-    base font-size, you can omit the 2nd
-    argument: em(6)
-  - lines(0.5, 26) is a shorthand for
-    em(($line-height/2), 26), so em(12, 26)
-    in Sharetribe's case.
-  --------------------------------------------
-  Examples:
-    p {
-      font-size:
-      line-height: lines(1);
-      margin-bottom: lines(0.5);
-    }
-    h1 {
-      font-size: em(42);
-      line-height: lines(2, 42);
-      margin-bottom: lines(1, 42);
-    }
-  --------------------------------------------
-*/
 
+/// Converts pixels to ems
+/// @example 
+/// p { 
+///   // em(6, 26) converts 6px to ems assuming the
+///   // font-size of the element is 26px.
+///   font-size: em(6, 26);
+/// }
+/// span {
+///   // If the base font-size, you can omit the 2nd argument: em(6)
+///   font-size: em(6);
+/// } 
 @function em($pixels, $context-font-size: $font-size) {
   @return ($pixels / $context-font-size) * 1em;
 }
 
+/// Shorthand for em($line-height/2)
+/// @example 
+/// h1 { 
+///   // lines(0.5, 26) is a shorthand for
+///   // em(($line-height/2), 26), so em(12, 26)
+///   // in Demogorgon's case.
+///   line-height: lines(0.5, 26);
+/// }
+/// p { 
+///   line-height: lines(1);
+/// }
 @function lines($lines, $context-font-size: $font-size,  $context-line-height: $line-height) {
   @return $lines * ($context-line-height / $context-font-size) * 1em;
 }

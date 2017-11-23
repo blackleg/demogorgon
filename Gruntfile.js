@@ -29,6 +29,15 @@ module.exports = function (grunt) {
         src: '**',
         dest: 'dist/'
       }
+    },
+    watch: {
+      scripts: {
+        files: [  
+          'src/\*.scss',
+          'test/demogorgon.scss'
+        ],
+        tasks: ['build']
+      }
     }
   });
 
@@ -36,6 +45,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-sassdoc');
   grunt.loadNpmTasks('grunt-sass-lint');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('lint', ['sasslint']);
   grunt.registerTask('doc', ['sassdoc']);

@@ -3,6 +3,7 @@
 /// mostly calculated using a modular scale based on
 /// the golden ratio: 1:1.618
 /// http://modularscale.com/scale/?px1=16&px2=&ra1=1.618&ra2=0
+/// @group types
 ////
 
 @import "constants";
@@ -19,6 +20,10 @@ $mega-type:    68;
 $giga-type:    110;
 
 /// Small type preset
+/// @example
+///   .type-small {
+///     @include small-type;
+///   }
 @mixin small-type {
   font-size: em($small-type);
   line-height: lines(0.75, $small-type); // 18px, aligns with baseline grid every 4 lines
@@ -27,16 +32,17 @@ $giga-type:    110;
 /// Small type
 /// @example scss - Paragraph
 ///   <p class="small-type">Small type</p>
-.small-type {
+.type-small {
   @include small-type;
 }
 
+/// Normal type 
 @mixin normal-type {
   font-size: em($font-size, $normal-type); // 16 is the base font-size of all(?) browsers
   line-height: lines(1); // 24px
 }
 
-.normal-type {
+.type-normal {
   @include normal-type;
 }
 
@@ -46,7 +52,7 @@ $giga-type:    110;
   font-weight: 600;
 }
 
-.big-type {
+.type-big {
   @include big-type;
 }
 
@@ -56,10 +62,18 @@ $giga-type:    110;
   font-weight: 600;
 }
 
+.type-large {
+  @include large-type;
+}
+
 @mixin larger-type {
   font-size: em($larger-type); // roughly 16*1.618 (longer part golden ratio)
   line-height: lines(1.5, $larger-type); // 36px
   font-weight: 600;
+}
+
+.type-larger {
+  @include larger-type;
 }
 
 @mixin huge-type {
@@ -68,14 +82,26 @@ $giga-type:    110;
   font-weight: 700;
 }
 
+.type-huge {
+  @include huge-type;
+}
+
 @mixin mega-type {
   font-size: em($mega-type); // roughly 16*1.618^3 (triple golden ratio)
   line-height: lines(3, $mega-type); // 72px
   font-weight: 700;
 }
 
+.type-mega {
+  @include mega-type;
+}
+
 @mixin giga-type {
   font-size: em($giga-type); // just in case you need something this big!
   line-height: lines(5, $giga-type); // 120px
   font-weight: 700;
+}
+
+.type-giga {
+  @include giga-type;
 }
