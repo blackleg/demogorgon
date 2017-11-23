@@ -2,12 +2,12 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     sass: {
-      test: {
+      build: {
         options: {
           sourcemap: 'none'
         },
         files: {
-          'public/demogorgon.css': 'test/demogorgon.scss'
+          'docs/styles/demogorgon.css': 'test/demogorgon.scss'
         }
       }
     },
@@ -15,7 +15,7 @@ module.exports = function (grunt) {
       default: {
         src: 'src',
         options: {
-          dest: 'docs'
+          dest: 'docs/sassdoc'
         }
       }
     },
@@ -38,9 +38,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('lint', ['sasslint']);
-  grunt.registerTask('test', ['lint', 'sass']);
   grunt.registerTask('doc', ['sassdoc']);
+  grunt.registerTask('build', ['lint', 'sass']);
 
-  grunt.registerTask('dist', ['lint', 'doc', 'copy']);
+  grunt.registerTask('dist', ['build', 'doc', 'copy']);
 
 };

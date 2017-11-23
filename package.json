@@ -15,7 +15,7 @@
   },
   "scripts": {
     "lint": "grunt jshint",
-    "test": "grunt test",
+    "build": "grunt build",
     "prepublish": "grunt dist"
   }
 }
