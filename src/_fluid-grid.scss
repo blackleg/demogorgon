@@ -1,0 +1,62 @@
+/*
+The MIT License
+
+Copyright 2017 hector.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+$bottom-gutter: lines(0.5);
+
+.row {
+  @include pie-clearfix;
+  margin-bottom: $bottom-gutter;
+
+  &.without-margin {
+    margin-bottom: 0;
+  }
+}
+
+/*.row-with-divider {
+  @extend .row;
+  border-bottom: 1px solid $border;
+}*/
+
+/**
+  Given `prefix`, `gutter` and `cols`, the mixin creates
+  a grid system
+*/
+@mixin create-fluid-grid($prefix, $gutter, $cols) {
+  
+}
+
+/**
+  Creates a basic grid system, prefixed "col"
+
+  Usage:
+  .row
+    .col-6
+      = "I'm half the size available"
+    .col-3
+      = "I'm 1/4 of the total available size"
+    .col-3
+      = "I'm 1/4 of the total available size"
+*/
+@include create-fluid-grid("col", lines(0.5), 12);
+

@@ -38,7 +38,7 @@
 }
 
 @function ems-to($ems, $new-context-font-size, $old-context-font-size: $font-size) {
-  @return $ems * $old-context-font-size / $new-context-font-size
+  @return $ems * $old-context-font-size / $new-context-font-size;
 }
 
 @function lines-to($lines, $new-context-font-size, $old-context-font-size: $font-size) {

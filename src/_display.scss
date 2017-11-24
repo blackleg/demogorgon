@@ -2,7 +2,7 @@
 
 /// Display none
 @mixin hidden {
-  display: none
+  display: none !important;
 }
 
 /// Hide content
@@ -10,7 +10,27 @@
   @include hidden;
 }
 
-/// Display none
+/// Display block
+@mixin display_block {
+  display: block !important;
+}
+
+/// Display block
+.display_block {
+  @include display_block;
+}
+
+/// Display inline
+@mixin display_inline {
+  display: inline;
+}
+
+/// Display inline
+.display_inline {
+  @include display_inline;
+}
+
+/// Hidden on tiny mobile view
 @mixin hidden-tiny-mobile {
   @include media(tiny-mobile) {
     @include hidden;
@@ -20,4 +40,63 @@
 /// Hidden on tiny mobile view
 .hidden-tiny-mobile {
   @include hidden-tiny-mobile;
+}
+
+
+@mixin visible-tablet {
+  @include hidden;
+
+  @include media(tablet) {
+    @include display_block;
+  }
+}
+
+.visible-tablet {
+  @include visible-tablet;
+}
+
+.visible-tablet-inline {
+  @extend .visible-tablet;
+  @include media(tablet) {
+    @include display_inline;
+  }
+}
+
+/// Hidden on tablet view
+@mixin hidden-tablet {
+  @include media(tablet) {
+    @include hidden;
+  }
+}
+
+/// Hidden on tablet view
+.hidden-tablet {
+  @include hidden-tablet;
+}
+
+.visible-desktop {
+  @include hidden;
+
+  @include media(desktop) {
+    @include display_block;
+  }
+}
+
+.visible-desktop-inline {
+  @extend .visible-tablet;
+  @include media(tablet) {
+    @include display_inline;
+  }
+}
+
+/// Hidden on destop view
+@mixin hidden-desktop {
+  @include media(desktop) {
+    @include hidden;
+  }
+}
+
+/// Hidden on destop view
+.hidden-desktop {
+  @include hidden-desktop;
 }

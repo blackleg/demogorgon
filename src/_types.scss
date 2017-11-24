@@ -6,8 +6,8 @@
 /// @group types
 ////
 
-@import "constants";
-@import "conversion";
+@import 'constants';
+@import 'conversion';
 
 // TODO -> Should we revise generic font sizes??
 $small-type:   13;
@@ -26,7 +26,7 @@ $giga-type:    110;
 ///   }
 @mixin small-type {
   font-size: em($small-type);
-  line-height: lines(0.75, $small-type); // 18px, aligns with baseline grid every 4 lines
+  line-height: lines(.75, $small-type); // 18px, aligns with baseline grid every 4 lines
 }
 
 /// Small type

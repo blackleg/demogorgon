@@ -2,8 +2,6 @@
 /// @group core
 ////
 
-$minimum-desktop-width:  768px;
-
 /// Media query mixin
 /// @example
 ///   @include media(tablet) {
@@ -30,7 +28,7 @@ $minimum-desktop-width:  768px;
     @media (min-width: em(600)) { @content; }
   }
   @if $point == tablet {
-    @media (min-width: em($minimum-desktop-width)) { @content; }
+    @media (min-width: em(768)) { @content; }
   }
   @if $point == small-desktop {
     @media (min-width: em(860)) { @content; }
