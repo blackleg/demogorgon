@@ -22,19 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-/// Bottom gutter
-$bottom-gutter: lines(0.5) !default;
+$primary-hue: 25;
 
-.row {
-  @include pie-clearfix;
-  margin-bottom: $bottom-gutter;
 
-  &.without-margin {
-    margin-bottom: 0;
-  }
-}
-
-.row-with-divider {
-  @extend .row;
-  border-bottom: 1px solid $border;
-}
+$border: hsl($primary-hue, 0%, 76.4%);
