@@ -37,8 +37,13 @@ THE SOFTWARE.
 
 }
 
-@mixin has-layout($approach: $default-has-layout-approach) {
+@mixin has-layout($approach) {
 
+}
+
+/// Extends the bottom of the element to enclose any floats it contains.
+@mixin clearfix {
+  overflow: hidden;
 }
 
 @mixin pie-clearfix {
