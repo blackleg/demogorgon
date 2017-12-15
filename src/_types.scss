@@ -48,8 +48,8 @@ $giga-type:    110;
 
 @mixin big-type {
   font-size: em($big-type); // roughly 16*1.382 (shorter part of golden ratio)
-  line-height: lines(1, $big-type); // 24px
   font-weight: 600;
+  line-height: lines(1, $big-type); // 24px
 }
 
 .type-big {
@@ -58,8 +58,8 @@ $giga-type:    110;
 
 @mixin large-type {
   font-size: em($large-type); // roughly 16*1.618 (longer part golden ratio)
-  line-height: lines(1.5, $large-type); // 36px
   font-weight: 600;
+  line-height: lines(1.5, $large-type); // 36px
 }
 
 .type-large {
@@ -68,8 +68,8 @@ $giga-type:    110;
 
 @mixin larger-type {
   font-size: em($larger-type); // roughly 16*1.618 (longer part golden ratio)
-  line-height: lines(1.5, $larger-type); // 36px
   font-weight: 600;
+  line-height: lines(1.5, $larger-type); // 36px
 }
 
 .type-larger {
@@ -78,8 +78,8 @@ $giga-type:    110;
 
 @mixin huge-type {
   font-size: em($huge-type); // roughly 16*1.618^2 (double golden ratio)
-  line-height: lines(2, $huge-type); // 48px
   font-weight: 700;
+  line-height: lines(2, $huge-type); // 48px
 }
 
 .type-huge {
@@ -88,8 +88,8 @@ $giga-type:    110;
 
 @mixin mega-type {
   font-size: em($mega-type); // roughly 16*1.618^3 (triple golden ratio)
-  line-height: lines(3, $mega-type); // 72px
   font-weight: 700;
+  line-height: lines(3, $mega-type); // 72px
 }
 
 .type-mega {
@@ -98,8 +98,8 @@ $giga-type:    110;
 
 @mixin giga-type {
   font-size: em($giga-type); // just in case you need something this big!
-  line-height: lines(5, $giga-type); // 120px
   font-weight: 700;
+  line-height: lines(5, $giga-type); // 120px
 }
 
 .type-giga {

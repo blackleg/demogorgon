@@ -22,37 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-////
-/// Polyfills of Compass
-/// @group core
-////
-
-@import 'constants';
-
-@mixin has-layout-zoom {
-
-}
-
-@mixin has-layout-block {
-
-}
-
-@mixin has-layout($approach: $default-has-layout-approach) {
-
-}
-
-@mixin pie-clearfix {
-  &:after {
-    display: table;
-    clear: both;
-    content: '';
-  }
-}
-
-/// Border radius
-@mixin border-radius($radius: $default-border-radius) {
-  border-radius: $radius;
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-}
-
+@import 'compass_test';

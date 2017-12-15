@@ -3,3 +3,5 @@ rules:
     - 2
     - order: recess
   no-important: 0
+  final-newline: 2
+  quotes: 2

@@ -28,32 +28,44 @@ var sassLint = require('gulp-sass-lint');
 var sassdoc = require('sassdoc');
 var del = require('del');
 var runSequence = require('run-sequence');
+var mocha = require('gulp-mocha');
 
 var srcPath = 'src/**/*.scss';
 var testPath = 'test/**/*.scss';
-var docStyles = 'docs/styles';
 var distPath = 'dist/';
 
-gulp.task('sass', function () {
-  return gulp.src(testPath)
-          .pipe(sass({outputStyle: 'compressed'})
-                  .on('error', sass.logError))
-          .pipe(gulp.dest(docStyles));
-});
-
-gulp.task('sasslint', function () {
-  return gulp.src(srcPath)
+gulp.task('lint', function () {
+  return gulp.src([srcPath, testPath])
           .pipe(sassLint())
           .pipe(sassLint.format())
           .pipe(sassLint.failOnError());
 });
 
-gulp.task('sassdoc', function () {
+gulp.task('mocha', function () {
+  return gulp.src('test/test.js').pipe(mocha());
+});
+
+gulp.task('test', function (callback) {
+  runSequence('lint', 'mocha', callback);
+});
+
+gulp.task('doc:style', function () {
+  return gulp.src('docs/styles/**/*.scss')
+          .pipe(sass({outputStyle: 'compressed'})
+                  .on('error', sass.logError))
+          .pipe(gulp.dest('docs/styles'));
+});
+
+gulp.task('doc:sassdoc', function () {
   var options = {
     dest: 'docs/sassdoc'
   };
   return gulp.src(srcPath)
           .pipe(sassdoc(options));
+});
+
+gulp.task('doc', function (callback) {
+  runSequence('doc:style', 'doc:sassdoc', callback);
 });
 
 gulp.task('copy', function () {
@@ -68,11 +80,11 @@ gulp.task('clean', function () {
 });
 
 gulp.task('build', function (callback) {
-  runSequence('sasslint', 'sass', callback);
+  runSequence('sasslint', callback);
 });
 
 gulp.task('dist', function (callback) {
-  runSequence('clean', 'build', 'sassdoc', 'copy', callback);
+  runSequence('clean', 'test', 'doc', 'copy', callback);
 });
 
 gulp.task('default', ['clean']);

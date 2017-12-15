@@ -22,37 +22,58 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-////
-/// Polyfills of Compass
-/// @group core
-////
+@import '../node_modules/sass-true/sass/true';
+@import '../src/compass';
 
-@import 'constants';
+@include describe('pie-clearfix [mixin]') {
+  @include it('Clear after') {
 
-@mixin has-layout-zoom {
+    @include assert {
+      @include output {
+        @include pie-clearfix;
+      }
 
-}
-
-@mixin has-layout-block {
-
-}
-
-@mixin has-layout($approach: $default-has-layout-approach) {
-
-}
-
-@mixin pie-clearfix {
-  &:after {
-    display: table;
-    clear: both;
-    content: '';
+      @include expect {
+        &:after {
+          display: table;
+          clear: both;
+          content: '';
+        }
+      }
+    }
   }
 }
 
-/// Border radius
-@mixin border-radius($radius: $default-border-radius) {
-  border-radius: $radius;
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
+
+@include describe('border-radius [mixin]') {
+  @include it('Outputs a default border radius') {
+
+    @include assert {
+      @include output {
+        @include border-radius;
+      }
+
+      @include expect {
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+      }
+    }
+  }
+
+  @include it('Outputs a 10px border radius') {
+
+    @include assert {
+      @include output {
+        @include border-radius(10px);
+      }
+
+      @include expect {
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+      }
+    }
+  }
 }
 
