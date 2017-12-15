@@ -8,8 +8,8 @@
 
 
 /// Converts pixels to ems
-/// @example 
-/// p { 
+/// @example
+/// p {
 ///   // em(6, 26) converts 6px to ems assuming the
 ///   // font-size of the element is 26px.
 ///   font-size: em(6, 26);
@@ -17,30 +17,30 @@
 /// span {
 ///   // If the base font-size, you can omit the 2nd argument: em(6)
 ///   font-size: em(6);
-/// } 
-@function em($pixels, $context-font-size: $font-size) {
+/// }
+@function em($pixels, $context-font-size: $default-font-size) {
   @return ($pixels / $context-font-size) * 1em;
 }
 
 /// Shorthand for em($line-height/2)
-/// @example 
-/// h1 { 
+/// @example
+/// h1 {
 ///   // lines(0.5, 26) is a shorthand for
 ///   // em(($line-height/2), 26), so em(12, 26)
 ///   // in Demogorgon's case.
 ///   line-height: lines(0.5, 26);
 /// }
-/// p { 
+/// p {
 ///   line-height: lines(1);
 /// }
-@function lines($lines, $context-font-size: $font-size,  $context-line-height: $line-height) {
+@function lines($lines, $context-font-size: $default-font-size,  $context-line-height: $default-line-height) {
   @return $lines * ($context-line-height / $context-font-size) * 1em;
 }
 
-@function ems-to($ems, $new-context-font-size, $old-context-font-size: $font-size) {
+@function ems-to($ems, $new-context-font-size, $old-context-font-size: $default-font-size) {
   @return $ems * $old-context-font-size / $new-context-font-size;
 }
 
-@function lines-to($lines, $new-context-font-size, $old-context-font-size: $font-size) {
+@function lines-to($lines, $new-context-font-size, $old-context-font-size: $default-font-size) {
   @return ems-to($lines, $new-context-font-size, $old-context-font-size);
 }

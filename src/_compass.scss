@@ -23,11 +23,11 @@ THE SOFTWARE.
 */
 
 @mixin has-layout-zoom {
-  
+
 }
 
 @mixin has-layout-block {
-  
+
 }
 
 @mixin has-layout($approach: $default-has-layout-approach) {
@@ -40,5 +40,12 @@ THE SOFTWARE.
     display: table;
     clear: both;
   }
+}
+
+/// Border radius
+@mixin border-radius($radius: $default-border-radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
 }
 

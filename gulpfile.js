@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 hector.
@@ -27,6 +27,7 @@ var sass = require('gulp-sass');
 var sassLint = require('gulp-sass-lint');
 var sassdoc = require('sassdoc');
 var del = require('del');
+var runSequence = require('run-sequence');
 
 var srcPath = 'src/**/*.scss';
 var testPath = 'test/**/*.scss';
@@ -36,7 +37,7 @@ var distPath = 'dist/';
 gulp.task('sass', function () {
   return gulp.src(testPath)
           .pipe(sass({outputStyle: 'compressed'})
-          .on('error', sass.logError))
+                  .on('error', sass.logError))
           .pipe(gulp.dest(docStyles));
 });
 
@@ -66,13 +67,13 @@ gulp.task('clean', function () {
   ]);
 });
 
-gulp.task('lint', ['sasslint']);
+gulp.task('build', function (callback) {
+  runSequence('sasslint', 'sass', callback);
+});
 
-gulp.task('build', ['lint', 'sass']);
+gulp.task('dist', function (callback) {
+  runSequence('clean', 'build', 'sassdoc', 'copy', callback);
+});
 
-gulp.task('doc', ['build', 'sassdoc']);
-
-gulp.task('dist', ['clean', 'doc', 'copy']);
-
-
+gulp.task('default', ['clean']);
 
