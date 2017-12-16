@@ -1,0 +1,119 @@
+// The MIT License
+//
+// Copyright 2017 hector.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+//
+
+@import 'demogorgon/vertical_centering';
+
+@include describe('Vertical centering') {
+
+  @include describe('vertical-centering-container [mixin]') {
+    @include it('add vertical centering container style') {
+
+      @include assert {
+        @include output {
+          @include vertical-centering-container;
+        }
+
+        @include expect {
+          font-size: 0;
+
+          &::before {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+
+  @include describe('vertical-centering-content [mixin]') {
+    @include it('add vertical centering content style') {
+
+      @include assert {
+        @include output {
+          @include vertical-centering-content;
+        }
+
+        @include expect {
+          display: inline-block;
+          width: 100%;
+          font-size: 16px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  @include describe('vertical-centering-text-content [mixin]') {
+    @include it('add vertical centering text content style') {
+
+      @include assert {
+        @include output {
+          @include vertical-centering-text-content;
+        }
+
+        @include expect {
+          // sass-lint:disable-block property-sort-order
+          display: inline-block;
+          width: 100%;
+          font-size: 16px;
+          vertical-align: middle;
+          margin-left: -0.25em;
+        }
+      }
+    }
+  }
+
+  @include describe('vertical-centering-table-container [mixin]') {
+    @include it('add vertical centering table container style') {
+
+      @include assert {
+        @include output {
+          @include vertical-centering-table-container;
+        }
+
+        @include expect {
+          display: table;
+        }
+      }
+    }
+  }
+
+  @include describe('vertical-centering-table-content [mixin]') {
+    @include it('add vertical centering table content style') {
+
+      @include assert {
+        @include output {
+          @include vertical-centering-table-content;
+        }
+
+        @include expect {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+}

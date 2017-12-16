@@ -21,10 +21,45 @@
 // THE SOFTWARE.
 //
 
-@import 'true';
+// Vertical centering using "ghost" element
+// Use for: Centering blocks with unknown height/width
+// http://css-tricks.com/centering-in-the-unknown/
 
-@import 'compass_test';
-@import 'conversion_test';
-@import 'types_test';
-@import 'border_radius_test';
-@import 'vertical_centering_test';
+@mixin vertical-centering-container {
+  // Set font-size to 0 to remove the small gap between
+  // inline-block elements
+  font-size: 0;
+
+  &::before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    content: '';
+  }
+}
+
+@mixin vertical-centering-content {
+  // Reset font-size
+  display: inline-block;
+  width: 100%;
+  font-size: #{$default-font-size}px;
+  vertical-align: middle;
+}
+
+@mixin vertical-centering-text-content {
+  @include vertical-centering-content;
+  margin-left: -0.25em; // Adjust for spacing. Needed if we're centering text
+}
+
+// Vertical centering using tables
+// Use for: Center multiline text
+// http://css-tricks.com/vertically-center-multi-lined-text/
+
+@mixin vertical-centering-table-container {
+  display: table;
+}
+
+@mixin vertical-centering-table-content {
+  display: table-cell;
+  vertical-align: middle;
+}

@@ -8,3 +8,24 @@ body {
 .styleinfo {
   color:green;
 }
+
+.vertical-centering-container-demo {
+  @include vertical-centering-container;
+  height: 100px;
+  width: 350px;
+}
+
+.vertical-centering-content-demo {
+  @include vertical-centering-content;
+}
+
+.vertical-centering-table-container-demo {
+  width: 100%;
+  height: 100px;
+  @include vertical-centering-table-container;
+}
+
+.vertical-centering-table-content-demo {
+  @include vertical-centering-table-content;
+  text-align: center;
+}
