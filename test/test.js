@@ -23,11 +23,19 @@
  */
 
 /**
- * Run sassTrue tests with Mocha tests
+ * Run sassTrue tests with Mocha
  */
 
 var path = require('path');
 var sassTrue = require('sass-true');
 
-var sassFile = path.join(__dirname, 'test.scss');
-sassTrue.runSass({file: sassFile}, describe, it);
+var config = {
+  file: 'test/test.scss',
+  includePaths: [
+    'node_modules/sass-true/sass',
+    'src',
+    'test'
+  ]
+};
+
+sassTrue.runSass(config, describe, it);

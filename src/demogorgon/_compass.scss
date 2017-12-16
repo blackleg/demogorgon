@@ -26,25 +26,13 @@
 /// @group core
 ////
 
-@mixin has-layout-zoom {
-
-}
-
-@mixin has-layout-block {
-
-}
-
-@mixin has-layout($approach) {
-
-}
-
 /// Extends the bottom of the element to enclose any floats it contains.
 @mixin clearfix {
   overflow: hidden;
 }
 
 @mixin pie-clearfix {
-  &:after {
+  &::after {
     display: table;
     clear: both;
     content: '';

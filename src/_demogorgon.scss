@@ -21,12 +21,13 @@
 // THE SOFTWARE.
 //
 
-@import 'default';
-@import 'conversion';
-@import 'compass';
-@import 'color_palette';
-@import 'fonts';
-@import 'types';
-@import 'media-queries';
-@import 'display';
-@import 'fluid-grid';
+@import 'demogorgon/defaults';
+@import 'demogorgon/compass';
+@import 'demogorgon/conversion';
+@import 'demogorgon/color_palette';
+@import 'demogorgon/fonts';
+@import 'demogorgon/types';
+@import 'demogorgon/media-queries';
+@import 'demogorgon/display';
+@import 'demogorgon/fluid-grid';
+@import 'demogorgon/border_radius';

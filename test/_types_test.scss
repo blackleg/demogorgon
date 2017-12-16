@@ -21,8 +21,7 @@
 // THE SOFTWARE.
 //
 
-@import '../node_modules/sass-true/sass/true';
-@import '../src/types';
+@import 'demogorgon/types';
 
 @include describe('Types') {
 

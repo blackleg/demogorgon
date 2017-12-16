@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 //
 
-@import 'media-queries';
+@import 'demogorgon/media-queries';
 
 /// Display none
 @mixin hidden {
@@ -34,23 +34,23 @@
 }
 
 /// Display block
-@mixin display_block {
+@mixin display-block {
   display: block !important;
 }
 
 /// Display block
-.display_block {
-  @include display_block;
+.display-block {
+  @include display-block;
 }
 
 /// Display inline
-@mixin display_inline {
+@mixin display-inline {
   display: inline;
 }
 
 /// Display inline
-.display_inline {
-  @include display_inline;
+.display-inline {
+  @include display-inline;
 }
 
 /// Hidden on tiny mobile view
@@ -70,7 +70,7 @@
   @include hidden;
 
   @include media(tablet) {
-    @include display_block;
+    @include display-block;
   }
 }
 
@@ -81,7 +81,7 @@
 .visible-tablet-inline {
   @extend .visible-tablet;
   @include media(tablet) {
-    @include display_inline;
+    @include display-inline;
   }
 }
 
@@ -101,14 +101,14 @@
   @include hidden;
 
   @include media(desktop) {
-    @include display_block;
+    @include display-block;
   }
 }
 
 .visible-desktop-inline {
   @extend .visible-tablet;
   @include media(tablet) {
-    @include display_inline;
+    @include display-inline;
   }
 }
 

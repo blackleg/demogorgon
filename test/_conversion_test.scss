@@ -21,37 +21,36 @@
 // THE SOFTWARE.
 //
 
-@import '../node_modules/sass-true/sass/true';
-@import '../src/conversion';
+@import 'demogorgon/conversion';
 
 @include describe('Conversions') {
 
   @include describe('em [function]') {
     @include it('Converts pixels to ems with default font size') {
-      @include assert-equal( em(16), 1em);
-      @include assert-equal( em(32), 2em);
+      @include assert-equal(em(16), 1em);
+      @include assert-equal(em(32), 2em);
     }
 
     @include it('Converts pixels to ems with font size 15px') {
-      @include assert-equal( em(15, 15), 1em);
-      @include assert-equal( em(30, 15), 2em);
+      @include assert-equal(em(15, 15), 1em);
+      @include assert-equal(em(30, 15), 2em);
     }
   }
 
   @include describe('lines [function]') {
     @include it('Calculate line-height with default font size') {
-      @include assert-equal( lines(1), 1.5em);
-      @include assert-equal( lines(2), 3em);
+      @include assert-equal(lines(1), 1.5em);
+      @include assert-equal(lines(2), 3em);
     }
 
     @include it('Calculate line-height with font size 15px') {
-      @include assert-equal( lines(1, 15), 1.6em);
-      @include assert-equal( lines(2, 15), 3.2em);
+      @include assert-equal(lines(1, 15), 1.6em);
+      @include assert-equal(lines(2, 15), 3.2em);
     }
 
     @include it('Calculate line-height with font size 15px and context line heigth 20px') {
-      @include assert-equal( lines(1, 16, 20), 1.25em);
-      @include assert-equal( lines(2, 16, 20), 2.5em);
+      @include assert-equal(lines(1, 16, 20), 1.25em);
+      @include assert-equal(lines(2, 16, 20), 2.5em);
     }
   }
 

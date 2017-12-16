@@ -50,8 +50,10 @@ gulp.task('test', function (callback) {
 });
 
 gulp.task('doc:style', function () {
-  return gulp.src('docs/styles/**/*.scss')
-          .pipe(sass({outputStyle: 'compressed'})
+  return gulp.src('docs/styles/demogorgon_doc.scss')
+          .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: [distPath]})
                   .on('error', sass.logError))
           .pipe(gulp.dest('docs/styles'));
 });
@@ -80,11 +82,11 @@ gulp.task('clean', function () {
 });
 
 gulp.task('build', function (callback) {
-  runSequence('clean', 'test', 'doc', callback);
+  runSequence('clean', 'test', 'copy', callback);
 });
 
 gulp.task('dist', function (callback) {
-  runSequence('build', 'copy', callback);
+  runSequence('build', 'doc', callback);
 });
 
 gulp.task('default', ['clean']);
