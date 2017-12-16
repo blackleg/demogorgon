@@ -80,11 +80,11 @@ gulp.task('clean', function () {
 });
 
 gulp.task('build', function (callback) {
-  runSequence('sasslint', callback);
+  runSequence('clean', 'test', 'doc', callback);
 });
 
 gulp.task('dist', function (callback) {
-  runSequence('clean', 'test', 'doc', 'copy', callback);
+  runSequence('build', 'copy', callback);
 });
 
 gulp.task('default', ['clean']);

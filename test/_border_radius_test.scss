@@ -21,8 +21,8 @@
 // THE SOFTWARE.
 //
 
-@import '../../node_modules/sass-true/sass/true';
-@import '../../src/border/radius';
+@import '../node_modules/sass-true/sass/true';
+@import '../src/border_radius';
 
 @include describe('Border radius') {
 
