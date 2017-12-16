@@ -1,6 +1,6 @@
 // The MIT License
 //
-// Copyright 2017 hector.
+// Copyright ${date?date?string("yyyy")} ${project.organization!user}.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,13 +20,3 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
-
-@import 'default';
-@import 'conversion';
-@import 'compass';
-@import 'color_palette';
-@import 'fonts';
-@import 'types';
-@import 'media-queries';
-@import 'display';
-@import 'fluid-grid';

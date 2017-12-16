@@ -21,12 +21,16 @@
 // THE SOFTWARE.
 //
 
-@import 'default';
-@import 'conversion';
-@import 'compass';
-@import 'color_palette';
-@import 'fonts';
-@import 'types';
-@import 'media-queries';
-@import 'display';
-@import 'fluid-grid';
+////
+/// Default valuees
+/// @group core
+////
+
+/// Default font size
+$default-font-size: 16 !default;
+
+/// Default line height
+$default-line-height: 24 !default;
+
+/// Default border radius
+$default-border-radius: 5px !default;

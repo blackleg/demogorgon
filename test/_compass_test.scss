@@ -1,94 +1,63 @@
-/*
-The MIT License
-
-Copyright 2017 hector.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-*/
+// The MIT License
+//
+// Copyright 2017 hector.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+//
 
 @import '../node_modules/sass-true/sass/true';
 @import '../src/compass';
 
-@include describe('clearfix [mixin]') {
-  @include it('Clearfix') {
+@include describe('Compass polyfills') {
 
-    @include assert {
-      @include output {
-        @include clearfix;
-      }
+  @include describe('clearfix [mixin]') {
+    @include it('Clearfix') {
 
-      @include expect {
-        overflow: hidden;
-      }
-    }
-  }
-}
+      @include assert {
+        @include output {
+          @include clearfix;
+        }
 
-@include describe('pie-clearfix [mixin]') {
-  @include it('Clear after') {
-
-    @include assert {
-      @include output {
-        @include pie-clearfix;
-      }
-
-      @include expect {
-        &:after {
-          display: table;
-          clear: both;
-          content: '';
+        @include expect {
+          overflow: hidden;
         }
       }
     }
   }
-}
 
+  @include describe('pie-clearfix [mixin]') {
+    @include it('Clear after') {
 
-@include describe('border-radius [mixin]') {
-  @include it('Outputs a default border radius') {
+      @include assert {
+        @include output {
+          @include pie-clearfix;
+        }
 
-    @include assert {
-      @include output {
-        @include border-radius;
-      }
-
-      @include expect {
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-      }
-    }
-  }
-
-  @include it('Outputs a 10px border radius') {
-
-    @include assert {
-      @include output {
-        @include border-radius(10px);
-      }
-
-      @include expect {
-        border-radius: 10px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
+        @include expect {
+          &:after {
+            display: table;
+            clear: both;
+            content: '';
+          }
+        }
       }
     }
   }
-}
 
+}

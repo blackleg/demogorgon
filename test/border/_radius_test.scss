@@ -1,0 +1,351 @@
+// The MIT License
+//
+// Copyright 2017 hector.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+//
+
+@import '../../node_modules/sass-true/sass/true';
+@import '../../src/border/radius';
+
+@include describe('Border radius') {
+
+  @include describe('border-radius [mixin]') {
+    @include it('Outputs a default border radius') {
+
+      @include assert {
+        @include output {
+          @include border-radius;
+        }
+
+        @include expect {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+        }
+      }
+    }
+
+    @include it('Outputs a 10px border radius') {
+
+      @include assert {
+        @include output {
+          @include border-radius(10px);
+        }
+
+        @include expect {
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  @include describe('border-top-left-radius [mixin]') {
+    @include it('Outputs a default border radius') {
+
+      @include assert {
+        @include output {
+          @include border-top-left-radius;
+        }
+
+        @include expect {
+          border-top-left-radius: 5px;
+          -webkit-border-top-left-radius: 5px;
+          -moz-border-radius-topleft: 5px;
+        }
+      }
+    }
+
+    @include it('Outputs a 10px border radius') {
+
+      @include assert {
+        @include output {
+          @include border-top-left-radius(10px);
+        }
+
+        @include expect {
+          border-top-left-radius: 10px;
+          -webkit-border-top-left-radius: 10px;
+          -moz-border-radius-topleft: 10px;
+        }
+      }
+    }
+  }
+
+  @include describe('border-top-right-radius [mixin]') {
+    @include it('Outputs a default border radius') {
+
+      @include assert {
+        @include output {
+          @include border-top-right-radius;
+        }
+
+        @include expect {
+          border-top-right-radius: 5px;
+          -webkit-border-top-right-radius: 5px;
+          -moz-border-radius-topright: 5px;
+        }
+      }
+    }
+
+    @include it('Outputs a 10px border radius') {
+
+      @include assert {
+        @include output {
+          @include border-top-right-radius(10px);
+        }
+
+        @include expect {
+          border-top-right-radius: 10px;
+          -webkit-border-top-right-radius: 10px;
+          -moz-border-radius-topright: 10px;
+        }
+      }
+    }
+  }
+
+  @include describe('border-bottom-left-radius [mixin]') {
+    @include it('Outputs a default border radius') {
+
+      @include assert {
+        @include output {
+          @include border-bottom-left-radius;
+        }
+
+        @include expect {
+          border-bottom-left-radius: 5px;
+          -webkit-border-bottom-left-radius: 5px;
+          -moz-border-radius-bottomleft: 5px;
+        }
+      }
+    }
+
+    @include it('Outputs a 10px border radius') {
+
+      @include assert {
+        @include output {
+          @include border-bottom-left-radius(10px);
+        }
+
+        @include expect {
+          border-bottom-left-radius: 10px;
+          -webkit-border-bottom-left-radius: 10px;
+          -moz-border-radius-bottomleft: 10px;
+        }
+      }
+    }
+  }
+
+  @include describe('border-bottom-right-radius [mixin]') {
+    @include it('Outputs a default border radius') {
+
+      @include assert {
+        @include output {
+          @include border-bottom-right-radius;
+        }
+
+        @include expect {
+          border-bottom-right-radius: 5px;
+          -webkit-border-bottom-right-radius: 5px;
+          -moz-border-radius-bottomright: 5px;
+        }
+      }
+    }
+
+    @include it('Outputs a 10px border radius') {
+
+      @include assert {
+        @include output {
+          @include border-bottom-right-radius(10px);
+        }
+
+        @include expect {
+          border-bottom-right-radius: 10px;
+          -webkit-border-bottom-right-radius: 10px;
+          -moz-border-radius-bottomright: 10px;
+        }
+      }
+    }
+  }
+
+  @include describe('border-top-radius [mixin]') {
+    @include it('Outputs a default border radius') {
+
+      @include assert {
+        @include output {
+          @include border-top-radius;
+        }
+
+        @include expect {
+          // sass-lint:disable-block property-sort-order
+          border-top-right-radius: 5px;
+          -webkit-border-top-right-radius: 5px;
+          -moz-border-radius-topright: 5px;
+          border-top-left-radius: 5px;
+          -webkit-border-top-left-radius: 5px;
+          -moz-border-radius-topleft: 5px;
+        }
+      }
+    }
+
+    @include it('Outputs a 10px border radius') {
+
+      @include assert {
+        @include output {
+          @include border-top-radius(10px);
+        }
+
+        @include expect {
+          // sass-lint:disable-block property-sort-order
+          border-top-right-radius: 10px;
+          -webkit-border-top-right-radius: 10px;
+          -moz-border-radius-topright: 10px;
+          border-top-left-radius: 10px;
+          -webkit-border-top-left-radius: 10px;
+          -moz-border-radius-topleft: 10px;
+        }
+      }
+    }
+  }
+
+  @include describe('border-right-radius [mixin]') {
+    @include it('Outputs a default border radius') {
+
+      @include assert {
+        @include output {
+          @include border-right-radius;
+        }
+
+        @include expect {
+          // sass-lint:disable-block property-sort-order
+          border-top-right-radius: 5px;
+          -webkit-border-top-right-radius: 5px;
+          -moz-border-radius-topright: 5px;
+          border-bottom-right-radius: 5px;
+          -webkit-border-bottom-right-radius: 5px;
+          -moz-border-radius-bottomright: 5px;
+
+        }
+      }
+    }
+
+    @include it('Outputs a 10px border radius') {
+
+      @include assert {
+        @include output {
+          @include border-right-radius(10px);
+        }
+
+        @include expect {
+          // sass-lint:disable-block property-sort-order
+          border-top-right-radius: 10px;
+          -webkit-border-top-right-radius: 10px;
+          -moz-border-radius-topright: 10px;
+          border-bottom-right-radius: 10px;
+          -webkit-border-bottom-right-radius: 10px;
+          -moz-border-radius-bottomright: 10px;
+
+        }
+      }
+    }
+  }
+
+  @include describe('border-bottom-radius [mixin]') {
+    @include it('Outputs a default border radius') {
+
+      @include assert {
+        @include output {
+          @include border-bottom-radius;
+        }
+
+        @include expect {
+          // sass-lint:disable-block property-sort-order
+          border-bottom-left-radius: 5px;
+          -webkit-border-bottom-left-radius: 5px;
+          -moz-border-radius-bottomleft: 5px;
+          border-bottom-right-radius: 5px;
+          -webkit-border-bottom-right-radius: 5px;
+          -moz-border-radius-bottomright: 5px;
+        }
+      }
+    }
+
+    @include it('Outputs a 10px border radius') {
+
+      @include assert {
+        @include output {
+          @include border-bottom-radius(10px);
+        }
+
+        @include expect {
+          // sass-lint:disable-block property-sort-order
+          border-bottom-left-radius: 10px;
+          -webkit-border-bottom-left-radius: 10px;
+          -moz-border-radius-bottomleft: 10px;
+          border-bottom-right-radius: 10px;
+          -webkit-border-bottom-right-radius: 10px;
+          -moz-border-radius-bottomright: 10px;
+        }
+      }
+    }
+  }
+
+  @include describe('border-left-radius [mixin]') {
+    @include it('Outputs a default border radius') {
+
+      @include assert {
+        @include output {
+          @include border-left-radius;
+        }
+
+        @include expect {
+          // sass-lint:disable-block property-sort-order
+          border-top-left-radius: 5px;
+          -webkit-border-top-left-radius: 5px;
+          -moz-border-radius-topleft: 5px;
+          border-bottom-left-radius: 5px;
+          -webkit-border-bottom-left-radius: 5px;
+          -moz-border-radius-bottomleft: 5px;
+        }
+      }
+    }
+
+    @include it('Outputs a 10px border radius') {
+
+      @include assert {
+        @include output {
+          @include border-left-radius(10px);
+        }
+
+        @include expect {
+          // sass-lint:disable-block property-sort-order
+          border-top-left-radius: 10px;
+          -webkit-border-top-left-radius: 10px;
+          -moz-border-radius-topleft: 10px;
+          border-bottom-left-radius: 10px;
+          -webkit-border-bottom-left-radius: 10px;
+          -moz-border-radius-bottomleft: 10px;
+        }
+      }
+    }
+  }
+
+}
