@@ -21,7 +21,6 @@
     "sassdoc": "^2.5.0"
   },
   "scripts": {
-    "test": "gulp test",
-    "prepublishOnly": "gulp dist"
+    "test": "gulp test"
   }
 }
